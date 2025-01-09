@@ -396,14 +396,16 @@ nav .collapse .heder-icon .icon-hed {
   width: 100%;
 
   .img-1 {
-    background: url(/img/bnner-1.png);
+    background: url(https://raw.githubusercontent.com/YOSSEF-WEAL/Restaurant-/refs/heads/main/img/bneer-2.png);
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
 
   .img-2 {
-    background: url(/img/bneer-2.png);
+    background: url(https://raw.githubusercontent.com/YOSSEF-WEAL/Restaurant-/refs/heads/main/img/bneer-2.png);
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
