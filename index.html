@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant website menu page</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/styleRES.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- bootstrap -->
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font-awesome -->
+    <!-- Animation_Library -->
+    <link class="Animation_Library" href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Animation_Library -->
+
+</head>
+
+<body>
+    <div class="spinner-wrapper">
+        <div class="spinner-border text-warning" style="color: var(--scandry-color) !important;" role="status">
+        </div>
+    </div>
+
+
+    <nav data-aos="fade-down" class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img class="logo-img" src="./img/logo-1.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shope</a>
+                    </li>
+                </ul>
+                <div class="heder-icon">
+                    <a class="icon-hed" data-bs-toggle="modal" data-bs-target="#exampleModal" href=""><i
+                            class="fa-solid fa-user"></i></a>
+
+                    <div class="icon-hed dropdown">
+                        <a class="icon-hed" href="" data-bs-toggle="dropdown" aria-expanded="false"><i
+                                class="fa-solid fa-magnifying-glass"></i></a>
+                        <ul class="dropdown-menu">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-text" id="inputGroup-sizing-lg"><i
+                                        class="fa-solid fa-magnifying-glass"></i></span>
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-lg" placeholder="Search">
+                            </div>
+                        </ul>
+                    </div>
+
+                    <a class="icon-hed" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                        aria-controls="offcanvasRight" href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Username</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Password</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                    </form>
+                    <p><a style="color: black;" class="link-offset-1" href="#">Create an account</a></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" style="width: 100%;  background-color: var(--greenInpalet-color);"
+                        class="btn btn-primary">Login</button>
+                    <button type="button" style="width: 100%; background-color: #dc3545;" class="btn btn-secondary"
+                        data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">My cart (2 Item in Cart)</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between">
+            <div class="product-card">
+                <div class="product-heder-cart d-inline-flex align-items-center gap-2">
+                    <img class="img-prodact-cart" src="./img/dich-3.png" alt="">
+                    <div class="text-prodact-cart">
+                        <h5 class="product-name">Foie gras </h5>
+                        <p class="product-price">$54.99</p>
+                    </div>
+                </div>
+                <div class="product-heder-cart d-inline-flex align-items-center gap-2">
+                    <img class="img-prodact-cart" style="width: 100px;" src="./img/dich-2.png" alt="">
+                    <div class="text-prodact-cart">
+                        <h5 class="product-name">Lighter Fare</h5>
+                        <p class="product-price">$40.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-btns border-top border-3">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="button"
+                        style="background-color: var(--scandry-color);">Proceed to Checkout</button>
+                    <button class="btn-outline btn btn btn-outline-primary" type="button">Shop more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="up"><i class="fa-solid fa-chevron-up"></i></div>
+
+    <div class="container hero-sc d-flex">
+
+        <div data-aos="fade-right" class="hero-text d-flex flex-column gap-2">
+            <div class="Bike-Delivery d-inline-flex  justify-content-between align-items-center">
+                <p class="p-driv">Bike Delivery</p>
+                <img data-aos="fade-right" class="bik-img" src="./img/Bike-Delivery.png" alt="">
+            </div>
+            <h1 class="hedLine_hero ">Special Food<br>
+                <span class="colored_hedLine">Every Time</span><br>
+                In Our Shop.
+            </h1>
+            <p class="p_hero">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo, sed proin amet a
+                vestibulum enim
+                volutpat lacus.
+                Volutpat arcu sit sed tortor etiam volutpat ipsum.</p>
+            <div class="btns_hero d-inline-flex gap-3 align-items-center">
+                <button class="basc-btn  hero-btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                <button class="pross-btn hero-btn "><i class="fa-solid fa-video"></i> Order Process</button>
+            </div>
+        </div>
+        <div data-aos="fade-left" class="hero-img-div text-center">
+            <img src="./img/hero-img.png">
+
+            <div data-aos="zoom-in-up"
+                class="prodact_up_img  d-inline-flex gap-2 justify-content-between align-items-center">
+                <img src="./img/bacon-burger1.png" alt="">
+                <div class="text_prodact_up_img d-flex flex-column gap-1 text-start">
+                    <p class="p-pro-1 "><span>Crazy Bergere</span></p>
+                    <p class="p-pro-2 ">$ 7.5</p>
+                    <p>Fast delivery</p>
+                </div>
+            </div>
+            <div data-aos="zoom-in-up" style="left: 75%; top: 95px;"
+                class="prodact_up_img prodact_up_img d-inline-flex gap-2 justify-content-between align-items-center">
+                <img src="./img/burge2.png" alt="">
+                <div class="text_prodact_up_img d-flex flex-column gap-1 text-start">
+                    <p class="p-pro-1 "><span>Classic Bergere</span></p>
+                    <p class="p-pro-2 ">$ 5.00</p>
+                    <p>Fast delivery</p>
+                </div>
+            </div>
+            <div data-aos="zoom-in-up" style="left: 78%; top: 78%; padding: 10px 14px;"
+                class="prodact_up_img prodact_up_img d-inline-flex gap-2 justify-content-between align-items-center">
+                <div style="width: 175px;" class="text_prodact_up_img d-flex flex-column gap-1 text-start">
+                    <p class="p-pro-1 "><span>Follow</span> us on</p>
+                    <div class="midea-icons d-inline-flex  justify-content-between align-items-center">
+                        <a href=""><img
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iI2RiNTA0YSIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMjQsMTI4YTk2LDk2LDAsMSwxLTk2LTk2QTk2LDk2LDAsMCwxLDIyNCwxMjhaIiBvcGFjaXR5PSIwLjIiPjwvcGF0aD48cGF0aCBkPSJNMTI4LDI0QTEwNCwxMDQsMCwxLDAsMjMyLDEyOCwxMDQuMTEsMTA0LjExLDAsMCwwLDEyOCwyNFptOCwxOTEuNjNWMTUyaDI0YTgsOCwwLDAsMCwwLTE2SDEzNlYxMTJhMTYsMTYsMCwwLDEsMTYtMTZoMTZhOCw4LDAsMCwwLDAtMTZIMTUyYTMyLDMyLDAsMCwwLTMyLDMydjI0SDk2YTgsOCwwLDAsMCwwLDE2aDI0djYzLjYzYTg4LDg4LDAsMSwxLDE2LDBaIj48L3BhdGg+PC9zdmc+"
+                                alt=""></a>
+                        <a href=""><img
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iI2RiNTA0YSIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMDgsMjE2SDE2MEw0OCw0MEg5NloiIG9wYWNpdHk9IjAuMiI+PC9wYXRoPjxwYXRoIGQ9Ik0yMTQuNzUsMjExLjcxbC02Mi42LTk4LjM4LDYxLjc3LTY3Ljk1YTgsOCwwLDAsMC0xMS44NC0xMC43NkwxNDMuMjQsOTkuMzQsMTAyLjc1LDM1LjcxQTgsOCwwLDAsMCw5NiwzMkg0OGE4LDgsMCwwLDAtNi43NSwxMi4zbDYyLjYsOTguMzctNjEuNzcsNjhhOCw4LDAsMSwwLDExLjg0LDEwLjc2bDU4Ljg0LTY0LjcyLDQwLjQ5LDYzLjYzQTgsOCwwLDAsMCwxNjAsMjI0aDQ4YTgsOCwwLDAsMCw2Ljc1LTEyLjI5Wk0xNjQuMzksMjA4LDYyLjU3LDQ4aDI5TDE5My40MywyMDhaIj48L3BhdGg+PC9zdmc+"
+                                alt=""></a>
+                        <a href=""><img
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iI2RiNTA0YSIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMTUuOTQsMTgyLjA4QTQ4LjMzLDQ4LjMzLDAsMCwxLDE2OCwyMjQsMTM2LDEzNiwwLDAsMSwzMiw4OCw0OC4zMyw0OC4zMywwLDAsMSw3My45Miw0MC4wNmE4LDgsMCwwLDEsOC4zLDQuOGwyMS4xMyw0Ny4yYTgsOCwwLDAsMS0uNjYsNy41M0w4MS4zMiwxMjVhNy45Myw3LjkzLDAsMCwwLS41NCw3LjgxYzguMjcsMTYuOTMsMjUuNzcsMzQuMjIsNDIuNzUsNDIuNDFhNy45Miw3LjkyLDAsMCwwLDcuODMtLjU5bDI1LTIxLjNhOCw4LDAsMCwxLDcuNTktLjY5bDQ3LjE2LDIxLjEzQTgsOCwwLDAsMSwyMTUuOTQsMTgyLjA4WiIgb3BhY2l0eT0iMC4yIj48L3BhdGg+PHBhdGggZD0iTTE0NC4yNyw0NS45M2E4LDgsMCwwLDEsOS44LTUuNjYsODYuMjIsODYuMjIsMCwwLDEsNjEuNjYsNjEuNjYsOCw4LDAsMCwxLTUuNjYsOS44QTguMjMsOC4yMywwLDAsMSwyMDgsMTEyYTgsOCwwLDAsMS03LjczLTUuOTQsNzAuMzUsNzAuMzUsMCwwLDAtNTAuMzMtNTAuMzNBOCw4LDAsMCwxLDE0NC4yNyw0NS45M1ptLTIuMzMsNDEuOGMxMy43OSwzLjY4LDIyLjY1LDEyLjU0LDI2LjMzLDI2LjMzQTgsOCwwLDAsMCwxNzYsMTIwYTguMjMsOC4yMywwLDAsMCwyLjA3LS4yNyw4LDgsMCwwLDAsNS42Ni05LjhjLTUuMTItMTkuMTYtMTguNS0zMi41NC0zNy42Ni0zNy42NmE4LDgsMCwxLDAtNC4xMywxNS40NlptODEuOTQsOTUuMzVBNTYuMjYsNTYuMjYsMCwwLDEsMTY4LDIzMkM4OC42LDIzMiwyNCwxNjcuNCwyNCw4OEE1Ni4yNiw1Ni4yNiwwLDAsMSw3Mi45MiwzMi4xMmExNiwxNiwwLDAsMSwxNi42Miw5LjUybDIxLjEyLDQ3LjE1LDAsLjEyQTE2LDE2LDAsMCwxLDEwOS4zOSwxMDRjLS4xOC4yNy0uMzcuNTItLjU3Ljc3TDg4LDEyOS40NWM3LjQ5LDE1LjIyLDIzLjQxLDMxLDM4LjgzLDM4LjUxbDI0LjM0LTIwLjcxYTguMTIsOC4xMiwwLDAsMSwuNzUtLjU2LDE2LDE2LDAsMCwxLDE1LjE3LTEuNGwuMTMuMDYsNDcuMTEsMjEuMTFBMTYsMTYsMCwwLDEsMjIzLjg4LDE4My4wOFptLTE1Ljg4LTJzLS4wNywwLS4xMSwwaDBsLTQ3LTIxLjA1LTI0LjM1LDIwLjcxYTguNDQsOC40NCwwLDAsMS0uNzQuNTYsMTYsMTYsMCwwLDEtMTUuNzUsMS4xNGMtMTguNzMtOS4wNS0zNy40LTI3LjU4LTQ2LjQ2LTQ2LjExYTE2LDE2LDAsMCwxLDEtMTUuNyw2LjEzLDYuMTMsMCwwLDEsLjU3LS43N0w5Niw5NS4xNWwtMjEtNDdhLjYxLjYxLDAsMCwxLDAtLjEyQTQwLjIsNDAuMiwwLDAsMCw0MCw4OCwxMjguMTQsMTI4LjE0LDAsMCwwLDE2OCwyMTYsNDAuMjEsNDAuMjEsMCwwLDAsMjA4LDE4MS4wN1oiPjwvcGF0aD48L3N2Zz4="
+                                alt=""></a>
+                        <a href=""><img
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iI2RiNTA0YSIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0xNzYsMzJIODBBNDgsNDgsMCwwLDAsMzIsODB2OTZhNDgsNDgsMCwwLDAsNDgsNDhoOTZhNDgsNDgsMCwwLDAsNDgtNDhWODBBNDgsNDgsMCwwLDAsMTc2LDMyWk0xMjgsMTY4YTQwLDQwLDAsMSwxLDQwLTQwQTQwLDQwLDAsMCwxLDEyOCwxNjhaIiBvcGFjaXR5PSIwLjIiPjwvcGF0aD48cGF0aCBkPSJNMTc2LDI0SDgwQTU2LjA2LDU2LjA2LDAsMCwwLDI0LDgwdjk2YTU2LjA2LDU2LjA2LDAsMCwwLDU2LDU2aDk2YTU2LjA2LDU2LjA2LDAsMCwwLDU2LTU2VjgwQTU2LjA2LDU2LjA2LDAsMCwwLDE3NiwyNFptNDAsMTUyYTQwLDQwLDAsMCwxLTQwLDQwSDgwYTQwLDQwLDAsMCwxLTQwLTQwVjgwQTQwLDQwLDAsMCwxLDgwLDQwaDk2YTQwLDQwLDAsMCwxLDQwLDQwWk0xMjgsODBhNDgsNDgsMCwxLDAsNDgsNDhBNDguMDUsNDguMDUsMCwwLDAsMTI4LDgwWm0wLDgwYTMyLDMyLDAsMSwxLDMyLTMyQTMyLDMyLDAsMCwxLDEyOCwxNjBabTY0LTg0YTEyLDEyLDAsMSwxLTEyLTEyQTEyLDEyLDAsMCwxLDE5Miw3NloiPjwvcGF0aD48L3N2Zz4="
+                                alt=""></a>
+                        <a href=""><img
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iI2RiNTA0YSIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yNDAsMTgzLjljLTkuMjUsOC42OS0zMS40NSw0LjYxLTQyLjY2LDEwLjc4LTExLDYuMDctMTcuMDcsMjUuNTYtMjkuNTcsMjguNzYtMTIuMDgsMy4wOS0yNi43Mi03LjU2LTM5Ljc3LTcuNTZzLTI3LjY5LDEwLjY1LTM5Ljc3LDcuNTZjLTEyLjUtMy4yLTE4LjUzLTIyLjY5LTI5LjU3LTI4Ljc2QzQ3LjQ1LDE4OC41MSwyNS4yNSwxOTIuNTksMTYsMTgzLjljMCwwLDU2LTIwLDU2LTEwMy45M2E1Niw1NiwwLDAsMSwxMTIsMEMxODQsMTYzLjg2LDI0MCwxODMuOSwyNDAsMTgzLjlaIiBvcGFjaXR5PSIwLjIiPjwvcGF0aD48cGF0aCBkPSJNMjQ3LjgzLDE4Mi4yOGE4LDgsMCwwLDAtNS4xMy01LjljLS4zOS0uMTQtMjguOTUtMTAuODgtNDMtNDkuMjNsMTkuMy03LjcyQTgsOCwwLDEsMCwyMTMsMTA0LjU3bC0xNy44Miw3LjEzQTE0OSwxNDksMCwwLDEsMTkyLDgwLDY0LDY0LDAsMCwwLDY0LDgwYTE1MS4yNCwxNTEuMjQsMCwwLDEtMy4xOCwzMS43NUw0MywxMDQuNTdBOCw4LDAsMSwwLDM3LDExOS40M2wxOS4zNyw3Ljc1YTk0LDk0LDAsMCwxLTE3Ljc0LDMwLjJjLTEyLjUyLDE0LjE0LTI1LjI3LDE5LTI1LjM2LDE5YTgsOCwwLDAsMC0yLjc3LDEzLjM2YzcuMSw2LjY3LDE3LjY3LDcuNzEsMjcuODksOC43Miw2LjMuNjIsMTIuODIsMS4yNywxNi4zOCwzLjIzLDMuMzcsMS44Niw2Ljg1LDYuNjIsMTAuMjEsMTEuMjIsNS40LDcuNDEsMTEuNTMsMTUuOCwyMS4yNCwxOC4yOCw5LjA3LDIuMzMsMTguMzUtLjgzLDI2LjU0LTMuNjIsNS41NS0xLjg5LDEwLjgtMy42OCwxNS4yMS0zLjY4czkuNjYsMS43OSwxNS4yMSwzLjY4YzYuMiwyLjExLDEzLDQuNDMsMTkuOSw0LjQzYTI2LjM1LDI2LjM1LDAsMCwwLDYuNjQtLjgxaDBjOS43LTIuNDgsMTUuODMtMTAuODcsMjEuMjMtMTguMjgsMy4zNi00LjYsNi44NC05LjM2LDEwLjIxLTExLjIyLDMuNTYtMiwxMC4wOC0yLjYxLDE2LjM5LTMuMjMsMTAuMjEtMSwyMC43OC0yLjA1LDI3Ljg4LTguNzJBOCw4LDAsMCwwLDI0Ny44MywxODIuMjhabS0zMS44Mi4yNmMtNy45MS43OC0xNi4wOCwxLjU5LTIyLjUzLDUuMTNzLTExLDkuNzktMTUuNDEsMTUuODFjLTQsNS40OC04LjE1LDExLjE2LTEyLjI4LDEyLjIxLTQuNDYsMS4xNS0xMC43Ni0xLTE3LjQyLTMuMjdzLTEzLjMxLTQuNTMtMjAuMzctNC41My0xMy44MywyLjMtMjAuMzcsNC41My0xMyw0LjQyLTE3LjQyLDMuMjdjLTQuMTMtMS4wNS04LjI3LTYuNzMtMTIuMjgtMTIuMjEtNC4zOS02LTguOTMtMTIuMjQtMTUuNDEtMTUuODFTNDcuOSwxODMuMzIsNDAsMTgyLjU0Yy0xLjU2LS4xNS0zLjE1LS4zMS00Ljc0LS40OWE5Ny4zNCw5Ny4zNCwwLDAsMCwxNC42OS0xMy4yOWM4LjM3LTkuMjcsMTcuNzItMjMuMjMsMjMuNzQtNDMuMTNsLjA2LS4xM2E4LjYzLDguNjMsMCwwLDAsLjQ2LTEuNjFBMTU4LjQ3LDE1OC40NywwLDAsMCw4MCw4MGE0OCw0OCwwLDAsMSw5NiwwLDE1OC40MiwxNTguNDIsMCwwLDAsNS44LDQzLjkyLDguNjMsOC42MywwLDAsMCwuNDYsMS42MWwuMDYuMTNjNiwxOS45LDE1LjM3LDMzLjg2LDIzLjc0LDQzLjEzYTk3LjM0LDk3LjM0LDAsMCwwLDE0LjY5LDEzLjI5QzIxOS4xNiwxODIuMjMsMjE3LjU3LDE4Mi4zOSwyMTYsMTgyLjU0WiI+PC9wYXRoPjwvc3ZnPg=="
+                                alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="zoom-in-up" style="left: -19%; top: 83%; padding: 10px 14px;"
+                class="prodact_up_img prodact_up_img d-inline-flex gap-2 justify-content-between align-items-center">
+                <div style="width: 175px;" class="text_prodact_up_img d-flex flex-column gap-1 text-start">
+                    <p class="p-pro-1 ">10k happy <span>Customer</span></p>
+                    <div class="imgs-costmor">
+                        <a href="" class="d-inline-flex align-items-center">
+                            <img src="./img/Review.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container Categories-sc">
+        <h3 data-aos="fade-up" class="text-center">Food <span>Categories</span></h3>
+        <div class="All_Categories text-center d-inline-flex  justify-content-between align-items-center gap-3">
+            <div data-aos="fade-up" class="categorie text-center">
+                <a href="">
+                    <img src="./img/ctgre-2.png" alt="">
+                    <h5>Dish Meal</h5>
+                </a>
+            </div>
+            <div data-aos="fade-up" class="categorie">
+                <a href="">
+                    <img src="./img/ctgre-4.png" alt="">
+                    <h5>Seafood</h5>
+                </a>
+            </div>
+
+            <div data-aos="fade-up" class="categorie">
+                <a href="">
+                    <img src="./img/ctgre-1.png" alt="">
+                    <h5>Bergeres</h5>
+                </a>
+            </div>
+            <div data-aos="fade-up" class="categorie">
+                <a href="">
+                    <img src="./img/ctgre-3.png" alt="">
+                    <h5>Fish meal</h5>
+                </a>
+            </div>
+            <div data-aos="fade-up" class="categorie">
+                <a href="">
+                    <img src="./img/ctgre-5.png" alt="">
+                    <h5>Soup</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div data-aos="fade-up" class=" baners  d-inline-flex  justify-content-around align-items-center">
+            <div class="bneer img-1">
+                <div class="bneer-text d-flex flex-column gap-2">
+                    <p><span>Start From $4.69</span></p>
+                    <p>Are You Ready To Buy?</p>
+                    <p>Get <span style="font-size: 20px;">60%</span> Discount on your firest sale</p>
+                    <button><i class="fa-solid fa-cart-shopping"></i> Try Now</button>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" class="bneer img-2">
+                <div class="bneer-text d-flex flex-column gap-2">
+                    <p><span>Start From $6.69</span></p>
+                    <p>Get A Discount</p>
+                    <p>For Weekly Offer!</p>
+                    <button><i class="fa-solid fa-cart-shopping"></i> Try Now</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <section class="dashes">
+        <div class="container">
+            <h3 data-aos="fade-up" class="text-center">DELICIOUS FOOD <span>MENU</span></h3>
+            <div class="products d-inline-flex  justify-content-around align-items-center">
+                <div data-aos="fade-up" class="product text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="315" height="321" fill="none" viewBox="0 0 315 321">
+                        <g filter="url(#a)">
+                            <path fill="#fff" fill-rule="evenodd"
+                                d="M82.422 34.47C78.76 24.107 70.135 15 59.145 15H39c-11.046 0-20 8.954-20 20v243c0 11.046 8.954 20 20 20h237c11.046 0 20-8.954 20-20V35c0-11.046-8.954-20-20-20h-20.145c-10.99 0-19.615 9.108-23.277 19.47-9.831 27.81-39.725 48.035-75.078 48.035S92.253 62.279 82.422 34.47Z"
+                                clip-rule="evenodd" />
+                        </g>
+                        <defs>
+                            <filter id="a" width="313.8" height="319.8" x=".6" y=".6" color-interpolation-filters="sRGB"
+                                filterUnits="userSpaceOnUse">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                <feOffset dy="4" />
+                                <feGaussianBlur stdDeviation="9.2" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.43 0" />
+                                <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_58238_44" />
+                                <feBlend in="SourceGraphic" in2="effect1_dropShadow_58238_44" result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    <img src="./img/dich-3.png" alt="">
+                    <div class="icons d-inline-flex  justify-content-between align-items-center">
+                        <div class="lov text-center">
+                            <i class="fa-solid fa-heart"></i>
+                            <!-- <i class="fa-regular fa-heart"></i> -->
+                            <p>6.3k</p>
+                        </div>
+                        <div class="star text-center">
+                            <i class="fa-solid fa-star"></i>
+                            <p>9.5</p>
+                        </div>
+                    </div>
+                    <div class="text-btns align-items-center d-flex flex-column gap-3">
+                        <div class="text">
+                            <h5>Foie gras </h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo, sed proin ...</p>
+                        </div>
+                        <div class="btns-prodact-card d-inline-flex  justify-content-between align-items-center">
+                            <p>$40.00</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" class="product text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="315" height="321" fill="none" viewBox="0 0 315 321">
+                        <g filter="url(#a)">
+                            <path fill="#fff" fill-rule="evenodd"
+                                d="M82.422 34.47C78.76 24.107 70.135 15 59.145 15H39c-11.046 0-20 8.954-20 20v243c0 11.046 8.954 20 20 20h237c11.046 0 20-8.954 20-20V35c0-11.046-8.954-20-20-20h-20.145c-10.99 0-19.615 9.108-23.277 19.47-9.831 27.81-39.725 48.035-75.078 48.035S92.253 62.279 82.422 34.47Z"
+                                clip-rule="evenodd" />
+                        </g>
+                        <defs>
+                            <filter id="a" width="313.8" height="319.8" x=".6" y=".6" color-interpolation-filters="sRGB"
+                                filterUnits="userSpaceOnUse">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                <feOffset dy="4" />
+                                <feGaussianBlur stdDeviation="9.2" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.43 0" />
+                                <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_58238_44" />
+                                <feBlend in="SourceGraphic" in2="effect1_dropShadow_58238_44" result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    <img src="./img/dich-2.png" style="width: 140px;" alt="">
+                    <div class="icons d-inline-flex  justify-content-between align-items-center">
+                        <div class="lov text-center">
+                            <!-- <i class="fa-solid fa-heart"></i> -->
+                            <i class="fa-regular fa-heart"></i>
+                            <p>5.5k</p>
+                        </div>
+                        <div class="star text-center">
+                            <i class="fa-solid fa-star"></i>
+                            <p>4.5</p>
+                        </div>
+                    </div>
+                    <div class="text-btns align-items-center d-flex flex-column gap-3">
+                        <div class="text">
+                            <h5>Lighter Fare</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo, sed proin ...</p>
+                        </div>
+                        <div class="btns-prodact-card d-inline-flex  justify-content-between align-items-center">
+                            <p>$50.00</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" class="product text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="315" height="321" fill="none" viewBox="0 0 315 321">
+                        <g filter="url(#a)">
+                            <path fill="#fff" fill-rule="evenodd"
+                                d="M82.422 34.47C78.76 24.107 70.135 15 59.145 15H39c-11.046 0-20 8.954-20 20v243c0 11.046 8.954 20 20 20h237c11.046 0 20-8.954 20-20V35c0-11.046-8.954-20-20-20h-20.145c-10.99 0-19.615 9.108-23.277 19.47-9.831 27.81-39.725 48.035-75.078 48.035S92.253 62.279 82.422 34.47Z"
+                                clip-rule="evenodd" />
+                        </g>
+                        <defs>
+                            <filter id="a" width="313.8" height="319.8" x=".6" y=".6" color-interpolation-filters="sRGB"
+                                filterUnits="userSpaceOnUse">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                <feOffset dy="4" />
+                                <feGaussianBlur stdDeviation="9.2" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.43 0" />
+                                <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_58238_44" />
+                                <feBlend in="SourceGraphic" in2="effect1_dropShadow_58238_44" result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    <img src="./img/dich-4.png" style="width: 155px;" alt="">
+                    <div class="icons d-inline-flex  justify-content-between align-items-center">
+                        <div class="lov text-center">
+                            <i class="fa-solid fa-heart"></i>
+                            <!-- <i class="fa-regular fa-heart"></i> -->
+                            <p>6.3k</p>
+                        </div>
+                        <div class="star text-center">
+                            <i class="fa-solid fa-star"></i>
+                            <p>9.5</p>
+                        </div>
+                    </div>
+                    <div class="text-btns align-items-center d-flex flex-column gap-3">
+                        <div class="text">
+                            <h5>Cocktail</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo, sed proin ...</p>
+                        </div>
+                        <div class="btns-prodact-card d-inline-flex  justify-content-between align-items-center">
+                            <p>$44.99</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" class="product text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="315" height="321" fill="none" viewBox="0 0 315 321">
+                        <g filter="url(#a)">
+                            <path fill="#fff" fill-rule="evenodd"
+                                d="M82.422 34.47C78.76 24.107 70.135 15 59.145 15H39c-11.046 0-20 8.954-20 20v243c0 11.046 8.954 20 20 20h237c11.046 0 20-8.954 20-20V35c0-11.046-8.954-20-20-20h-20.145c-10.99 0-19.615 9.108-23.277 19.47-9.831 27.81-39.725 48.035-75.078 48.035S92.253 62.279 82.422 34.47Z"
+                                clip-rule="evenodd" />
+                        </g>
+                        <defs>
+                            <filter id="a" width="313.8" height="319.8" x=".6" y=".6" color-interpolation-filters="sRGB"
+                                filterUnits="userSpaceOnUse">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                <feOffset dy="4" />
+                                <feGaussianBlur stdDeviation="9.2" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.43 0" />
+                                <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_58238_44" />
+                                <feBlend in="SourceGraphic" in2="effect1_dropShadow_58238_44" result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    <img src="./img/dich-5.png" alt="" style="                    width: 140px;
+                    left: 58px;">
+                    <div class="icons d-inline-flex  justify-content-between align-items-center">
+                        <div class="lov text-center">
+                            <i class="fa-regular fa-heart"></i>
+                            <p>7.3k</p>
+                        </div>
+                        <div class="star text-center">
+                            <i class="fa-solid fa-star"></i>
+                            <p>8.2</p>
+                        </div>
+                    </div>
+                    <div class="text-btns align-items-center d-flex flex-column gap-3">
+                        <div class="text">
+                            <h5>sandwich</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo, sed proin ...</p>
+                        </div>
+                        <div class="btns-prodact-card d-inline-flex  justify-content-between align-items-center">
+                            <p>$30.99</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" class="product text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="315" height="321" fill="none" viewBox="0 0 315 321">
+                        <g filter="url(#a)">
+                            <path fill="#fff" fill-rule="evenodd"
+                                d="M82.422 34.47C78.76 24.107 70.135 15 59.145 15H39c-11.046 0-20 8.954-20 20v243c0 11.046 8.954 20 20 20h237c11.046 0 20-8.954 20-20V35c0-11.046-8.954-20-20-20h-20.145c-10.99 0-19.615 9.108-23.277 19.47-9.831 27.81-39.725 48.035-75.078 48.035S92.253 62.279 82.422 34.47Z"
+                                clip-rule="evenodd" />
+                        </g>
+                        <defs>
+                            <filter id="a" width="313.8" height="319.8" x=".6" y=".6" color-interpolation-filters="sRGB"
+                                filterUnits="userSpaceOnUse">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                <feOffset dy="4" />
+                                <feGaussianBlur stdDeviation="9.2" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.43 0" />
+                                <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_58238_44" />
+                                <feBlend in="SourceGraphic" in2="effect1_dropShadow_58238_44" result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    <img src="./img/dich-1.png" style="width: 141px;
+                    left: 57px;" alt="">
+                    <div class="icons d-inline-flex  justify-content-between align-items-center">
+                        <div class="lov text-center">
+                            <i class="fa-solid fa-heart"></i>
+                            <!-- <i class="fa-regular fa-heart"></i> -->
+                            <p>2.2k</p>
+                        </div>
+                        <div class="star text-center">
+                            <i class="fa-solid fa-star"></i>
+                            <p>5.5</p>
+                        </div>
+                    </div>
+                    <div class="text-btns align-items-center d-flex flex-column gap-3">
+                        <div class="text">
+                            <h5>Baked Chicken</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo, sed proin ...</p>
+                        </div>
+                        <div class="btns-prodact-card d-inline-flex  justify-content-between align-items-center">
+                            <p>$99.99</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Offerinings">
+        <div class="container text-center">
+            <h3 data-aos="fade-up">Discover Ore <span>Offerinings</span></h3>
+            <div class="container text-center">
+                <div class="row align-items-center">
+                    <div data-aos="zoom-in-up" class="col">
+                        <div class="fitsher align-items-center text-center d-flex flex-column gap-2">
+                            <img src="./img/fetsher1.png" alt="">
+                            <h5>Quality Food</h5>
+                            <p>Experience excellence with our meticulously prepared dishes, crafted with premium
+                                ingredients for unparalleled taste</p>
+                        </div>
+                    </div>
+                    <div class="col-1 p-0">
+                        <img class="line" src="./img/line.png" alt="">
+                    </div>
+                    <div data-aos="zoom-in-up" class="col">
+                        <div class="fitsher align-items-center text-center d-flex flex-column gap-2">
+                            <img src="./img/fetsher2.png" alt="">
+                            <h5>Super Taste</h5>
+                            <p>Indulge in flavors that ignite your senses, from savory delights to sweet sensations, for
+                                an unforgettable dining
+                                experience.</p>
+                        </div>
+                    </div>
+                    <div class="col-1 p-0">
+                        <img class="line" src="./img/line.png" alt="">
+                    </div>
+                    <div data-aos="zoom-in-up" class="col">
+                        <div class="fitsher align-items-center text-center d-flex flex-column gap-2">
+                            <img src="./img/fetsher3.png" alt="">
+                            <h5>Cooking Service</h5>
+                            <p>Let us bring our culinary expertise to your table with personalized cooking services
+                                tailored to your tastes and
+                                preferences</p>
+                        </div>
+                    </div>
+                    <div class="col-1 p-0">
+                        <img class="line" src="./img/line.png" alt="">
+                    </div>
+                    <div data-aos="zoom-in-up" class="col">
+                        <div class="fitsher align-items-center text-center d-flex flex-column gap-2">
+                            <img src="./img/fetsher4.png" alt="">
+                            <h5>Fast Delivery</h5>
+                            <p>Enjoy convenience with our speedy delivery service, ensuring your favorite dishes are
+                                delivered fresh and hot right to your doorstep.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="Clint-Says">
+        <div class="container">
+            <h3 data-aos="fade-up" class="text-center">Our Happy <span>Clint Says</span></h3>
+            <div class="row clint" style="margin-top: -120px;">
+                <div data-aos="zoom-in-down" class="col divClintImg">
+                    <img src="./img/img-clint.png" alt="">
+                    <div class="prodact_up_img  d-inline-flex gap-2 justify-content-between align-items-center">
+                        <img src="./img/clintSay.png" alt="">
+                        <div class="text_prodact_up_img d-flex flex-column gap-1 text-start">
+                            <p class="p-pro-1 ">Our Happy <span>Customer</span></p>
+                            <div class="Clint-Dis d-flex gap-2 ">
+                                <p class="d-inline-flex  justify-content-between align-items-center"><i
+                                        class="fa-solid fa-star"></i> 4.2</p>
+
+                                <p>(15.8k <span>Review</span> )</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col  align-items-center text-center d-flex flex-column gap-4">
+                    <div data-aos="zoom-in-left" class="review">
+                        <div class="hed_rev d-inline-flex  justify-content-between align-items-center gap-2 p-20">
+                            <img src="./img/Review2.png" alt="">
+                            <p>Our <span>Reviewer</span></p>
+                        </div>
+                    </div>
+                    <div data-aos="zoom-in-left"
+                        class=" clinet_review align-items-center text-center d-flex flex-column gap-2">
+                        <p class="text-center">"I absolutely love dining here! The food is always delicious, and the
+                            service is top-notch.
+                            The staff are friendly and
+                            attentive, making every visit a delightful experience. I highly recommend trying their
+                            signature dishes; they never
+                            disappoint. It's no surprise this restaurant has become my go-to spot for satisfying my
+                            cravings and enjoying a great
+                            meal!"</p>
+                        <div class="theClinet d-inline-flex gap-2  justify-content-center align-items-center">
+                            <img src="./img/clintlast.png" alt="">
+                            <div class="detilsClinet d-flex flex-column text-start">
+                                <p class="p1clint">Olivia fernando</p>
+                                <p class="p2clint">Food Enhtusiast</p>
+                                <div class="star_ret d-inline-flex justify-content-between align-items-center gap-1">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star not_activ"></i>
+                                    <p>4.2 k</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="part1_footer col-lg-3 col-md-6 col-sm-6 col-12">
+                    <img class="logo" src="./img/logo-2.png" alt="">
+                    <p>96 2/1 Consistory Bldg Front Street, 11
+                        Colombo City, Colombo 8</p>
+                    <div class="sochelIcons d-inline-flex  justify-content-between align-items-center gap-2">
+                        <a href="#"><img src="./img/faceBook.png" alt=""></a>
+                        <a href="#"><img src="./img/X.png" alt=""></a>
+                        <a href="#"><img src="./img/phone.png" alt=""></a>
+                        <a href="#"><img src="./img/instgrame.png" alt=""></a>
+                        <a href="#"><img src="./img/snapshate.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="hiber_links col-lg-3 col-md-6 col-sm-6 col-12">
+                    <h4>Categories</h4>
+                    <div class="links_footer d-flex flex-column gap-2">
+                        <a href="#">Vagetarian</a>
+                        <a href="#">Food Products</a>
+                        <a href="#">Package Foods</a>
+                        <a href="#">Drinks & Beverage</a>
+                    </div>
+                </div>
+                <div class="hiber_links col-lg-3 col-md-6 col-sm-6 col-12">
+                    <h4>Useful Links</h4>
+                    <div class="links_footer d-flex flex-column gap-2">
+                        <a href="#">Payment & Tax</a>
+                        <a href="#">trms of Servics</a>
+                        <a href="#">Your Account</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="last_part_footer col-lg-3 col-md-6 col-sm-6 col-12">
+                    <h4>Categories</h4>
+                    <div class="content d-flex flex-column gap-2">
+                        <a href="#" class="icon_text emile d-inline-flex gap-3 align-items-center">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <p>Email Address</p>
+                        </a>
+                        <a href="#" class="icon_text d-inline-flex gap-3 align-items-center">
+                            <i class="fa-solid fa-headset"></i>
+                            <p>Call +94 77 123 4567</p>
+                        </a>
+                        <a href="#" class="icon_text d-inline-flex gap-3 align-items-center">
+                            <i class="fa-solid fa-envelope"></i>
+                            <p>Support@BurgerMaster.com</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class=" Copyright">
+                <a href="#">Copyright (C) 2024 <span>Burger Master</span> | All rights reserived</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/mine.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+
+    <!-- Animation_Library -->
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Animation_Library -->
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ar">
